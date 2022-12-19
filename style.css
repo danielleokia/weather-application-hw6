@@ -1,0 +1,24 @@
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-fluid{
+    height: 70px;
+    color: black;
+    background-color: rgb(65, 141, 223);
+}
+.headerh1{
+    text-align: center;
+    background-image: linear-gradient(to right, rgb(255, 193, 8), rgb(78, 236, 125) , rgb(0, 123, 255));
+}
+
+.fiveDayForecast{
+    display: flex;
+    margin: 20px;
+}
+#day1, #day2{
+    margin: 40px;
+}
