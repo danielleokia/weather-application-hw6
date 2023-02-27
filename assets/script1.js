@@ -7,7 +7,7 @@ $(document).ready(function () {
         fiveDayForecast(searchInput);
     });
     //getting previous searches from local storage
-    var previousSearch = JSON.parse(localStorage.getItem("history")) || [];
+    var previousSearch = JSON.parse(localStorage.getItem("previousSearch")) || [];
     if (previousSearch.length > 0) {
         weatherFunction(previousSearch[previousSearch.length - 1]);
     }
@@ -32,7 +32,7 @@ $(document).ready(function () {
         }).then(function (data) {
             if (previousSearch.indexOf(searchInput) === -1) {
                 previousSearch.push(searchInput);
-                localStorage.setItem("history", JOSN.stringify(previousSearch));
+                localStorage.setItem("history", JSON.stringify(previousSearch));
                 createRow(searchInput);
             }
             $("#today").empty()
@@ -89,11 +89,11 @@ $(document).ready(function () {
 
 
             for (var i = 0; i < data.list.length; i++) {
-                if (data.list[i].dt.txt.indexOf("15:00:00") !== -1) {
+                if (data.list[i].dt_txt.indexOf("15:00:00") !== -1) {
                     var titleFive = $("<h3>").addClass("card-title").text(new Date(data.list[i].dt_txt).toLocaleDateString());
                     var imgFive = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png");
                     var colFive = $("<div>").addClass("col-md-2.5");
-                    var cardFive = $("<div>").addClass("card bg-primary text-white");
+                    var cardFive = $("<div>").addClass("card bg-dark text-white");
                     var cardBodyFive = $("<div>").addClass("card-body p-2");
                     var humidFive = $("<p>").addClass("card-text").text("Humidity: " + data.list[i].main.humidity + "%");
                     var tempFive = $("<p>").addClass("card-text").text("Temperature: " + data.list[i].main.temp + " °F");
