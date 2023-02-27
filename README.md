@@ -2,7 +2,7 @@
 ## Description
 This is an app designed to display the weather in different cities around the world. It works by pulling data from the Open weather API. When a city is typed into the search bar, a call is made that translates it into longitude and latitude. The API has a range of information on the weather conditions and we decide what data we want to display on the page. In this case it was: wind speed, humidity and temperature.
 
-link to deployed application:
+link to deployed application: https://danielleokia.github.io/weather-application-hw6/
 
 ## Contribution
 N/A
